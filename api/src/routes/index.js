@@ -11,8 +11,8 @@ const router = Router()
 
 
 router.get('/food', async(req,res) => {
-    console.log("exito a medias")
-    res.status(200).send("estamos bien")
+    let results = await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=f848239be8104dec8b35f16828b2aae0")
+    res.status(200).send(results.data)
 })
 
 
